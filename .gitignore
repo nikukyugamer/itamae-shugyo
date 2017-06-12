@@ -1,0 +1,9 @@
+secret/authorized_keys
+secret/password.rb
+secret/password_mysql.rb
+secret/password_samba.rb
+secret/secret_keys
+secret/username.rb
+cookbooks/my-own-environment
+sabaku.sh
+sabaku.unit_test.sh
