@@ -1,9 +1,1 @@
-secret/authorized_keys
-secret/password.rb
-secret/password_mysql.rb
-secret/password_samba.rb
-secret/secret_keys
-secret/username.rb
-cookbooks/my-own-environment
-sabaku.sh
-sabaku.unit_test.sh
+2753ecc55c208095d2a150a43f2bee44

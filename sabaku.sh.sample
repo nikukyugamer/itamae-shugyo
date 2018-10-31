@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 host='999.999.999.999'
 username='USERNAME'
 recipe='./roles/recipe_you_like.rb'
 
 sudo itamae ssh -h "$host" -u "$username" "$recipe" -l debug
+
+exit 0
