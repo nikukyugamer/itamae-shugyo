@@ -1,5 +1,6 @@
 require 'dotenv/load'
 
+# TODO: .env に逃したい
 USERNAME = 'deploy_user'.freeze
 USER_PUBLIC_KEY_SOURCE_PATH = 'remote_files/deploy_user_authorized_keys.pub'.freeze
 SSH_CONFIG_SOURCE_PATH = 'remote_files/ssh_config'.freeze
@@ -13,7 +14,7 @@ GOPATH = "/home/#{USERNAME}/.go".freeze
 
 remote_file "/home/#{USERNAME}/.bashrc" do
   source BASHRC_SOURCE_PATH
-  content 'copy bash config file'
+  content 'Copy bash config file'
   owner USERNAME
   group USERNAME
 end
@@ -50,7 +51,7 @@ end
 
 remote_file "/home/#{USERNAME}/.ssh/authorized_keys" do
   source USER_PUBLIC_KEY_SOURCE_PATH
-  content 'copy SSH secret key'
+  content 'Copy SSH secret key'
   mode '644'
   owner USERNAME
   group USERNAME
@@ -60,7 +61,7 @@ end
 # TODO: デフォルトだとログに出力されるので大変に良くない
 remote_file "/home/#{USERNAME}/.ssh/deploy_user.pem" do
   source ENV['SOME_SECRET_KEY_PATH']
-  content 'copy SSH secret key'
+  content 'Copy SSH secret key'
   mode '600'
   owner USERNAME
   group USERNAME
@@ -113,7 +114,7 @@ directory "/home/#{USERNAME}/.ghq" do
   group USERNAME
 end
 
-execute 'install peco, ghq and hub' do
+execute 'Install peco, ghq, hub and gomi' do
   user USERNAME
-  command "GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/peco/peco/cmd/peco && GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/motemen/ghq && GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/github/hub"
+  command "GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/peco/peco/cmd/peco && GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/motemen/ghq && GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/github/hub && GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get -u github.com/b4b4r07/gomi/..."
 end

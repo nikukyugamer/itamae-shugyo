@@ -1,25 +1,31 @@
-# Required
+# How to use
+Global install is required.
+
 ```bash
 $ gem install itamae
+
+# For Ed25519
+$ gem install ed25519
+$ gem install bcrypt_pbkdf
+
 $ gem install dotenv
+```
+
+# Remote files
+- If you wanna copy `/source_path/to` to remote machine's `/target_path/to`, please write as below
+
+```ruby
+remote_file '/target_path/to' do
+  source '/source_path/to'
+  content 'Describe detail'
+  owner 'root'
+  group 'root'
+end
 ```
 
 # What's this?
 - My [Itamae](http://itamae.kitchen/) recipes
-
-# Overviewing
-- Itamae recipes for `Ubuntu`
-- Not fully recipes because under developing
-    - Previous version has been deprecated because it is not awesome
-    - Now the recipes are not [best practice](https://github.com/itamae-kitchen/itamae/wiki/Best-Practice) but bad practice
-
-# How to use
-```bash
-$ bundle install --path vendor/bundle
-$ cp remote_files/2753ecc55c208095d2a150a43f2bee44.sample remote_files/2753ecc55c208095d2a150a43f2bee44
-$ vim 2753ecc55c208095d2a150a43f2bee44 # Write secret key (it's some danger)
-$ itamae ssh -h hostname my_recipe.rb # You need SSH key and configuration of ~/.ssh/config and SSH login user MUST be able to sudo
-```
+- Now the recipes are not [best practice](https://github.com/itamae-kitchen/itamae/wiki/Best-Practice) but bad practice
 
 # Tips for `Sa-Ba-Ku`
 - The word `sabaku` which contains in `sabaku.sh` is Japanese verb word `捌く(Sa-Ba-Ku)`, which means `to deal with foodstuff well`
@@ -28,6 +34,7 @@ $ itamae ssh -h hostname my_recipe.rb # You need SSH key and configuration of ~/
 # Note
 - I've been training as `Itamae`, that is `SHUGYO-CHU` (under training)
     - So this repository name is `Itamae Shugyo`
+- [best practice](https://github.com/itamae-kitchen/itamae/wiki/Best-Practice)
 
 # Thanks
 - [Best Practice · itamae-kitchen/itamae Wiki](https://github.com/itamae-kitchen/itamae/wiki/Best-Practice)

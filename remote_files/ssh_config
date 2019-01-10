@@ -2,7 +2,7 @@ Host foobar.com
   HostName barfoo.com
   User deploy_user
   Port 22
-  IdentityFile ~/.ssh/deploy_user.pem
+  IdentityFile ~/.ssh/key_name.pem
   IdentitiesOnly yes
   AddKeysToAgent yes
   ServerAliveInterval 60

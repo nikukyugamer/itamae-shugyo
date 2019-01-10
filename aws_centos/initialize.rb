@@ -1,7 +1,3 @@
-# TODO: SSH の永続化設定
-# /etc/ssh/sshd_config
-# #ClientAliveInterval 0 -> ClientAliveInterval 60
-
 execute 'Initial yum' do
   command 'yum update -y'
 end
@@ -16,12 +12,7 @@ execute 'Change Timezone to Asia/Tokyo' do
   command 'timedatectl set-timezone Asia/Tokyo'
 end
 
-THIS_HOSTNAME = 'foobar-host'.freeze
-execute 'create hostname' do
-  command "hostnamectl set-hostname #{THIS_HOSTNAME}"
-end
-
-execute 'after procedure' do
+execute 'Clean package manager' do
   command 'yum autoremove && yum clean all'
 end
 
