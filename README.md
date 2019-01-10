@@ -1,3 +1,9 @@
+# Required
+```bash
+$ gem install itamae
+$ gem install dotenv
+```
+
 # What's this?
 - My [Itamae](http://itamae.kitchen/) recipes
 
