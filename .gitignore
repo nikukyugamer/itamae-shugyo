@@ -1,1 +1,5 @@
 .env
+*.pem
+config
+authorized_keys
+sabaku_aws_centos_root_user.sh
