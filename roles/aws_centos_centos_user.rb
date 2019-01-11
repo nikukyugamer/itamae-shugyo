@@ -7,6 +7,14 @@ remote_file '/home/centos/.zshrc' do
   group 'centos'
 end
 
+remote_file '/home/centos/chsh_to_zsh.sh' do
+  source '../remote_files/aws_centos/chsh_to_zsh.sh'
+  content 'Copy changing shell to zsh file (Shell script)'
+  mode '755'
+  owner 'centos'
+  group 'centos'
+end
+
 git '/home/centos/.rbenv' do
   user 'centos'
   repository 'https://github.com/sstephenson/rbenv.git'
@@ -62,7 +70,7 @@ end
 
 execute 'rbenv install & set global' do
   user 'centos'
-  command "/home/centos/.rbenv/bin/rbenv install #{ENV['INSTALLED_RUBY_VERSION']} && /home/centos/.rbenv/bin/rbenv global #{ENV['INSTALLED_RUBY_VERSION']}"
+  command "/home/centos/.rbenv/bin/rbenv install -f #{ENV['INSTALLED_RUBY_VERSION']} && /home/centos/.rbenv/bin/rbenv global #{ENV['INSTALLED_RUBY_VERSION']}"
 end
 
 execute 'gem install bundler' do
@@ -72,17 +80,22 @@ end
 
 execute 'ndenv install & set global' do
   user 'centos'
-  command "/home/centos/.ndenv/bin/ndenv install #{ENV['INSTALLED_NODEJS_VERSION']} && /home/centos/.ndenv/bin/ndenv global #{ENV['INSTALLED_NODEJS_VERSION']}"
+  command "/home/centos/.ndenv/bin/ndenv install -f #{ENV['INSTALLED_NODEJS_VERSION']} && /home/centos/.ndenv/bin/ndenv global #{ENV['INSTALLED_NODEJS_VERSION']}"
+end
+
+execute 'Preparation for installing pyenv' do
+  user 'centos'
+  command 'sudo yum install -y gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel git'
 end
 
 execute 'pyenv install & set global' do
   user 'centos'
-  command "/home/centos/.pyenv/bin/pyenv install #{ENV['INSTALLED_PYTHON_VERSION']} && /home/centos/.pyenv/bin/pyenv global #{ENV['INSTALLED_PYTHON_VERSION']}"
+  command "/home/centos/.pyenv/bin/pyenv install -f #{ENV['INSTALLED_PYTHON_VERSION']} && /home/centos/.pyenv/bin/pyenv global #{ENV['INSTALLED_PYTHON_VERSION']}"
 end
 
 execute 'goenv install & set global' do
   user 'centos'
-  command "/home/centos/.goenv/bin/goenv install #{ENV['INSTALLED_GOLANG_VERSION']} && /home/centos/.goenv/bin/goenv global #{ENV['INSTALLED_GOLANG_VERSION']}"
+  command "/home/centos/.goenv/bin/goenv install -f #{ENV['INSTALLED_GOLANG_VERSION']} && /home/centos/.goenv/bin/goenv global #{ENV['INSTALLED_GOLANG_VERSION']}"
 end
 
 directory '/home/centos/.go' do
@@ -117,4 +130,9 @@ end
 execute 'Install gomi' do
   user 'centos'
   command "GOPATH=/home/centos/#{ENV['GOPATH']} /home/centos/#{ENV['GOLANG_BINARY_PATH']} get -u github.com/b4b4r07/gomi/..."
+end
+
+execute 'Change default shell to zsh' do
+  user 'centos'
+  command '/home/centos/chsh_to_zsh.sh'
 end

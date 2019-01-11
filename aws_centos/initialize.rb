@@ -2,7 +2,7 @@ execute 'Initial yum' do
   command 'yum update -y'
 end
 
-%w(wget curl zip unzip git zsh).each do |pkg|
+%w(wget curl zip unzip git zsh vim expect).each do |pkg|
   package pkg do
     action :install
   end
