@@ -114,7 +114,22 @@ directory "/home/#{USERNAME}/.ghq" do
   group USERNAME
 end
 
-execute 'Install peco, ghq, hub and gomi' do
+execute 'Install peco' do
   user USERNAME
-  command "GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/peco/peco/cmd/peco && GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/motemen/ghq && GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/github/hub && GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get -u github.com/b4b4r07/gomi/..."
+  command "GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/peco/peco/cmd/peco"
+end
+
+execute 'Install ghq' do
+  user USERNAME
+  command "GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/motemen/ghq"
+end
+
+execute 'Install hub' do
+  user USERNAME
+  command "GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get github.com/github/hub"
+end
+
+execute 'Install gomi' do
+  user USERNAME
+  command "&& GOPATH=#{GOPATH} #{GOLANG_BINARY_PATH} get -u github.com/b4b4r07/gomi/..."
 end
