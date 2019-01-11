@@ -136,3 +136,7 @@ execute 'Change default shell to zsh' do
   user 'centos'
   command '/home/centos/chsh_to_zsh.sh'
 end
+
+file '/home/centos/chsh_to_zsh.sh' do
+  action :delete
+end
