@@ -1,7 +1,7 @@
-.env
-*.pem
-config
-authorized_keys
+# Your secret information in below directories (Example)
+ssh_keys/
+dotenvs/
 
-sabaku_aws_centos_centos_user.sh
-sabaku_aws_centos_general_user.sh
+*.env
+*.pem
+*authorized_keys*

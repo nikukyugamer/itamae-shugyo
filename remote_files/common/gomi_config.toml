@@ -1,0 +1,10 @@
+# config.toml
+root = "~/.gomi"
+
+# Interpret if name matches the shell file name pattern
+ignore_files = [
+  ".DS_Store",
+  "*~",
+]
+
+gomi_size = 1000000000 # 1GB

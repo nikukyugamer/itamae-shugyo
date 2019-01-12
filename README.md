@@ -1,5 +1,17 @@
 # How to use
-Global install is required.
+
+## Sa-ba-ku
+- Sa-ba-ku with `.env`
+
+```bash
+$ export $(cat .env | grep -v ^# | xargs); ./sabaku.sh
+```
+
+## Preparation
+- Create YOUR `.env`
+    - cf. [.env.sample](/.env.sample)
+
+- Global install is required.
 
 ```bash
 $ gem install itamae
@@ -11,7 +23,7 @@ $ gem install bcrypt_pbkdf
 $ gem install dotenv
 ```
 
-# Create remote files
+# Create remote files (Optional)
 - If you wanna copy `/source_path/to` to remote machine's `/target_path/to`, please write as below
 
 ```ruby
@@ -27,8 +39,8 @@ end
 - My [Itamae](http://itamae.kitchen/) recipes
 - Now the recipes are not [best practice](https://github.com/itamae-kitchen/itamae/wiki/Best-Practice) but bad practice
 
-# Tips for `Sa-Ba-Ku`
-- The word `sabaku` which contains in `sabaku.sh` is Japanese verb word `捌く(Sa-Ba-Ku)`, which means `to deal with foodstuff well`
+# Tips for `Sa-ba-ku`
+- The word `sabaku` which contains in `sabaku.sh` is Japanese verb word `捌く(Sa-ba-ku)`, which means `to deal with foodstuff well`
     - [Example image](http://livedoor.blogimg.jp/maamee123/imgs/b/f/bf9923eb.jpg)
 
 # Note
@@ -40,6 +52,11 @@ end
 - [Best Practice · itamae-kitchen/itamae Wiki](https://github.com/itamae-kitchen/itamae/wiki/Best-Practice)
 - [Chef脱落者が、Itamaeで快適インフラ生活する話](http://qiita.com/zaru/items/8ae6182e544aac6f6d79)
 - [Itamaeチートシート](http://qiita.com/fukuiretu/items/170aa956731f2ffb5715)
+
+# TODO
+- 冪等 (Idempotent) になるように修正する
+    - 例えば、AWS ならば swapfile の存否で分岐させる
+- 粒度と DRY を意識したリファクタリング
 
 # LICENSE
 - [MIT License](/LICENSE)
