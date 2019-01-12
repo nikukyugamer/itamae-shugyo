@@ -11,7 +11,7 @@ $ gem install bcrypt_pbkdf
 $ gem install dotenv
 ```
 
-# Remote files
+# Create remote files
 - If you wanna copy `/source_path/to` to remote machine's `/target_path/to`, please write as below
 
 ```ruby
