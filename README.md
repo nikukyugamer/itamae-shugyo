@@ -58,5 +58,15 @@ end
     - 例えば、AWS ならば swapfile の存否で分岐させる
 - 粒度と DRY を意識したリファクタリング
 
+## Additional recipe
+- Some recipes for `arm (Raspberry Pi)`
+- A role for ConoHa
+- [git-lfs](https://github.com/git-lfs/git-lfs/wiki/Installation)
+- nginx
+- redis
+- tig
+- mongodb
+- heroku-cli
+
 # LICENSE
 - [MIT License](/LICENSE)
