@@ -86,5 +86,8 @@ end
 - Do Itamae with SSH Key
     - Confirm server's IP Address
 
+# Best Practice (From official documentation)
+- https://github.com/itamae-kitchen/itamae/wiki/Best-Practice
+
 # LICENSE
 - [MIT License](/LICENSE)
