@@ -68,5 +68,20 @@ end
 - mongodb
 - heroku-cli
 
+# How to provision to ConoHa via GUI
+- Note: `Ubuntu` case
+- `Add Server` with `SSH Key`
+- Login console by `root` with web browser
+- `# adduser ubuntu`
+- `# echo ubuntu ALL=NOPASSWD: ALL >> /etc/sudoers`
+    - This is a very^n danger command
+- `# mkdir /home/ubuntu/.ssh`
+- `# cp /root/.ssh/authorized_keys /home/ubuntu/.ssh`
+- `# chown ubuntu:ubuntu /home/ubuntu/.ssh && chmod 700 /home/ubuntu/.ssh`
+- `# chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys && chmod 600 /home/ubuntu/.ssh/authorized_keys`
+- `$ sudo cp /root/.ssh/
+- Do Itamae with SSH Key
+    - Confirm IP Address
+
 # LICENSE
 - [MIT License](/LICENSE)

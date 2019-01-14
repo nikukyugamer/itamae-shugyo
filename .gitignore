@@ -2,6 +2,7 @@
 ssh_keys/
 dotenvs/
 
+# Generally secret information files in below files
 *.env
 *.pem
 *authorized_keys*

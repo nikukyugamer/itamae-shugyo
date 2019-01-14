@@ -1,7 +1,6 @@
 require 'dotenv/load'
 
-include_recipe '../recipes/aws_ubuntu/apt_get'
-include_recipe '../recipes/common/create_swap_area'
+include_recipe '../recipes/conoha_ubuntu/apt_get'
 
 include_recipe '../recipes/common/zsh'
 include_recipe '../recipes/common/ssh_keys_config'
@@ -16,7 +15,13 @@ include_recipe '../recipes/common/pyenv_and_python'
 include_recipe '../recipes/common/rbenv_and_ruby'
 
 include_recipe '../recipes/common/tig'
+include_recipe '../recipes/conoha_ubuntu/mysql-server'
+include_recipe '../recipes/conoha_ubuntu/postgresql'
+include_recipe '../recipes/conoha_ubuntu/redis-server'
+include_recipe '../recipes/conoha_ubuntu/mongodb'
+include_recipe '../recipes/conoha_ubuntu/openjdk-8-jre'
+include_recipe '../recipes/conoha_ubuntu/embulk'
 
-include_recipe '../recipes/aws_ubuntu/locale'
+include_recipe '../recipes/conoha_ubuntu/locale'
 include_recipe '../recipes/common/change_hostname'
 include_recipe '../recipes/common/change_sshd_config'

@@ -27,6 +27,8 @@ end
 
 directory "/home/#{ENV['PROVISIONED_USERNAME']}/.gomi" do
   action :create
+  owner ENV['PROVISIONED_USERNAME']
+  group ENV['PROVISIONED_USERNAME']
 end
 
 remote_file "/home/#{ENV['PROVISIONED_USERNAME']}/.gomi/config.toml" do
