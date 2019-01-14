@@ -76,11 +76,11 @@ end
 
 ```bash
 # adduser ubuntu
-# echo ubuntu ALL=NOPASSWD: ALL >> /etc/sudoers`
-# mkdir /home/ubuntu/.ssh`
-# chown ubuntu:ubuntu /home/ubuntu/.ssh && chmod 700 /home/ubuntu/.ssh`
-# cp /root/.ssh/authorized_keys /home/ubuntu/.ssh`
-# chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys && chmod 600 /home/ubuntu/.ssh/authorized_keys`
+# echo ubuntu ALL=NOPASSWD: ALL >> /etc/sudoers
+# mkdir /home/ubuntu/.ssh
+# chown ubuntu:ubuntu /home/ubuntu/.ssh && chmod 700 /home/ubuntu/.ssh
+# cp /root/.ssh/authorized_keys /home/ubuntu/.ssh
+# chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys && chmod 600 /home/ubuntu/.ssh/authorized_keys
 ```
 
 - Do Itamae with SSH Key
