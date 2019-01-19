@@ -1,0 +1,18 @@
+version: "3"
+services:
+  for_development:
+    build: .
+    container_name: castlevania
+    image: xevious/base:1.0
+    ports:
+      - "34700:22"
+      - "34701:445"
+      - "34702:443"
+      - "34703:80"
+      - "34704:8080"
+      - "34705:3000"
+      - "34706:3306"
+      - "34707:5432"
+      - "34708:6379"
+      - "34709:27017"
+    tty: true
