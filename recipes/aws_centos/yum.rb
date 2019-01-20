@@ -22,6 +22,10 @@ end
   end
 end
 
+execute 'Install Epel for tig and etc.' do
+  command 'sudo yum install -y epel-release.noarch'
+end
+
 execute 'Change Timezone to Asia/Tokyo' do
   command 'timedatectl set-timezone Asia/Tokyo'
 end
