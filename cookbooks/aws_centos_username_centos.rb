@@ -24,3 +24,4 @@ include_recipe '../recipes/common/change_sshd_config'
 
 # include_recipe '../apps/common/nginx'
 # include_recipe '../recipes/common/disable_selinux'
+# include_recipe '../apps/centos/httpd_tools'
