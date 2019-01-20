@@ -19,6 +19,7 @@ include_recipe '../recipes/common/rbenv'
 # include_recipe '../recipes/common/ruby'
 
 include_recipe '../recipes/common/tig'
+include_recipe '../recipes/apps/common/nginx'
 include_recipe '../recipes/docker_ubuntu/mysql_server'
 include_recipe '../recipes/docker_ubuntu/postgresql'
 include_recipe '../recipes/docker_ubuntu/redis_server'

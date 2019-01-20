@@ -5,14 +5,14 @@ LABEL MAINTAINER="druaga"
 ENV TZ=Asia/Tokyo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y && apt-get install -y sudo vim wget git ssh expect rsync
-COPY ./docker_files/adduser.sh /root
 
 # USER: root
 RUN mkdir /root/.ssh
 COPY ./docker_files/authorized_keys /root/.ssh/authorized_keys
 
 # USER: ubuntu (Available sudo without password)
-RUN /root/adduser.sh ubuntu && usermod -aG sudo ubuntu && mkdir /home/ubuntu/.ssh
+COPY ./docker_files/adduser.sh /root
+RUN /root/adduser.sh ubuntu && usermod -aG sudo ubuntu && sleep 1 && mkdir /home/ubuntu/.ssh
 COPY ./docker_files/authorized_keys /home/ubuntu/.ssh/authorized_keys
 RUN chown ubuntu:ubuntu /home/ubuntu/.ssh && chmod 0700 /home/ubuntu/.ssh
 RUN chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys && chmod 0600 /home/ubuntu/.ssh/authorized_keys
