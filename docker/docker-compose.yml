@@ -16,3 +16,6 @@ services:
       - "34708:6379"
       - "34709:27017"
     tty: true
+    # restart: always
+    # volumes:
+    #   ~/docker/data:/opt
