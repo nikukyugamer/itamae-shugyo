@@ -2,7 +2,7 @@ Host github.com
   HostName github.com
   Port 22
   User git
-  IdentityFile FOOBAR
+  IdentityFile IDENTITY_FILE_PATH
   IdentitiesOnly yes
   AddKeysToAgent yes
   ServerAliveInterval 60

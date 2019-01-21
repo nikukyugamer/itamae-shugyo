@@ -14,9 +14,8 @@ include_recipe '../recipes/common/ndenv_and_node_and_yarn'
 include_recipe '../recipes/common/pyenv'
 include_recipe '../recipes/common/rbenv'
 
-# 時間がかかりすぎる
-# include_recipe '../recipes/common/python'
-# include_recipe '../recipes/common/ruby'
+include_recipe '../recipes/common/python'
+include_recipe '../recipes/common/ruby'
 
 include_recipe '../recipes/common/tig'
 include_recipe '../recipes/apps/common/nginx'
