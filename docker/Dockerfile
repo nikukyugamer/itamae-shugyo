@@ -12,7 +12,9 @@ COPY ./docker_files/authorized_keys /root/.ssh/authorized_keys
 
 # USER: ubuntu (Available sudo without password)
 COPY ./docker_files/adduser.sh /root
-RUN /root/adduser.sh ubuntu && usermod -aG sudo ubuntu && sleep 1 && mkdir /home/ubuntu/.ssh
+RUN /root/adduser.sh ubuntu && usermod -aG sudo ubuntu
+RUN sleep 5
+RUN mkdir /home/ubuntu/.ssh
 COPY ./docker_files/authorized_keys /home/ubuntu/.ssh/authorized_keys
 RUN chown ubuntu:ubuntu /home/ubuntu/.ssh && chmod 0700 /home/ubuntu/.ssh
 RUN chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys && chmod 0600 /home/ubuntu/.ssh/authorized_keys
