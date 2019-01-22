@@ -27,9 +27,9 @@ remote_file "#{PROVISIONED_DIRECTORY}/.ssh/config" do
 end
 
 # 送った .ssh/config の中の、鍵の path を設定する（環境変数を用いて DRY に）
-#file "#{PROVISIONED_DIRECTORY}/.ssh/config" do
-#  action :edit
-#  block do |content|
-#    content.gsub!('IDENTITY_FILE_PATH', "~/.ssh/#{ENV['GITHUB_PRIVATE_KEY_FILENAME']}")
-#  end
-#end
+file "#{PROVISIONED_DIRECTORY}/.ssh/config" do
+  action :edit
+  block do |content|
+    content.gsub!('IDENTITY_FILE_PATH', "~/.ssh/#{ENV['GITHUB_PRIVATE_KEY_FILENAME']}")
+  end
+end
