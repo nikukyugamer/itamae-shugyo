@@ -1,18 +1,3 @@
-execute 'Initial apt-get update' do
-  command 'apt-get update -y'
-end
-
-execute 'Initial apt-get dist-upgrade' do
-  # "DEBIAN_FRONTEND=noninteractive" and "sudo -E" are for avoiding a interactive installation of "ssh-server" and "grub"
-  command 'DEBIAN_FRONTEND=noninteractive sudo -E apt-get dist-upgrade -y'
-end
-
-%w(language-pack-ja language-pack-ja-base).each do |pkg|
-  package pkg do
-    action :install
-  end
-end
-
 %w(manpages-ja build-essential apache2-utils wget curl zip unzip git software-properties-common).each do |pkg|
   package pkg do
     action :install
@@ -43,9 +28,5 @@ end
   package pkg do
     action :install
   end
-end
-
-execute 'Clean package manager' do
-  command 'apt-get autoremove -y && sudo apt-get autoclean -y'
 end
 

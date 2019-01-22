@@ -18,4 +18,4 @@ services:
     tty: true
     # restart: always
     # volumes:
-    #   ~/docker/data:/opt
+    #   ./data:/opt

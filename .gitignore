@@ -6,3 +6,4 @@ dotenvs/
 *.env
 *.pem
 *authorized_keys*
+*.swp

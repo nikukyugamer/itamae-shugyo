@@ -13,13 +13,13 @@ end
   end
 end
 
-%w(manpages-ja build-essential apache2-utils wget curl zip unzip git software-properties-common zsh).each do |pkg|
+%w(manpages-ja build-essential apache2-utils wget curl zip unzip git software-properties-common).each do |pkg|
   package pkg do
     action :install
   end
 end
 
-%w(wget curl zip unzip git zsh vim expect).each do |pkg|
+%w(wget curl zip unzip git vim expect).each do |pkg|
   package pkg do
     action :install
   end
