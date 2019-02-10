@@ -6,7 +6,7 @@ include_recipe '../recipes/conoha_ubuntu/locale'
 
 include_recipe '../recipes/conoha_ubuntu/add_new_user'
 include_recipe '../recipes/conoha_ubuntu/sudoers'
-include_recipe '../recipes/common/zsh'
+include_recipe '../recipes/conoha_ubuntu/zsh'
 include_recipe '../recipes/common/ssh_keys_config'
 
 include_recipe '../recipes/common/vimrc'
