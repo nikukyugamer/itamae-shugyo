@@ -9,7 +9,7 @@ execute 'Create a .ssh directory if it does not exist' do
   command "mkdir -p #{PROVISIONED_DIRECTORY}/.ssh"
 end
 
-remote_file "#{PROVISIONED_DIRECTORY}/.ssh/#{ENV['GITHUB_PRIVATE_KEY_PROVISIONED_FILENAME']}" do
+remote_file "#{PROVISIONED_DIRECTORY}/.ssh/#{ENV['GITHUB_PRIVATE_KEY_FILENAME']}" do
   source ENV['GITHUB_PRIVATE_KEY_SOURCE_FILE']
   content 'Copy GitHub SSH private key'
   mode '600'
